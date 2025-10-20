@@ -1,0 +1,210 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Kiclik</title>
+		<link rel="stylesheet" type="text/css" href="style.css">
+		<link href="https://fonts.googleapis.com/css?family=Montserrat:300,600" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+		<link rel="stylesheet" type="text/css" href="animate.css">
+		<link rel="icon" type="image/png" href="images/coin.png" />
+	</head>
+	<body>
+		<header class="container"></header>
+		<main>
+			<section>
+				<h1 class="title title--big center">Team Kikliks<br>Dataplay workshop</h1>
+				<h2 class="title title--medium container wow bounceInRight">Découvrez les régions et bâtiments de Namur grâce à notre petit jeu "clicker"</h2>
+			</section>
+			<section>
+				<div class="rule container">
+					<h3 class="title title--small">Le but du jeu :</h3>
+					<p>
+						Cliquer sur 
+						<span class="img img--Clicker"></span>
+						 vous fera gagner des 
+						<span class="img img--Kikliks"></span>
+						. Ils seront stockés et permettront d’acheter des
+						<span class="tuto tuto--zone">zones</span>
+						 . À l’achat des zones, se débloqueront les 
+						<span class="tuto tuto--bati">bâtiments </span>
+						 correspondant à celles-ci. Et en achetant les bâtiments vous pourrez recevoir leurs informations.
+					</p>
+				</div>
+			</section>
+		</main>
+		<div class="polygone">
+			<span class="counter noselect" id="count"> 0</span>
+			<div class="container">
+				<div id="drawing"></div>
+				<div class="change--button">
+					<button id="btn__zone" class="btn btn--1 noselect">Bâtiments</button>
+					<button id="btn__bat" class="btn btn--2 noselect">zones</button>
+				</div>
+				<div id="bat__hidden" class="batiment hidden">
+					<ul class="bati">
+						<li id="heaj" class="bati__el">
+							<img src="images/heaj.svg" alt="Haute école albert jacquard" class="noselect">
+							<p>
+								Haute école Albert Jacquard 
+							</p>
+							<span class="coinSelector coin">50</span>
+							<p id="hiddenHistory1" class="p--history hidden">
+								La Haute École Albert Jacquard est l'une des six Hautes Écoles organisées par la Fédération Wallonie-Bruxelles. Située au centre ville et dans la province de Namur, la Haute École Albert Jacquard propose un enseignement de pointe dans 3 domaines.
+							</p>
+						</li>
+						<li id="hoteldeville" class="bati__el">
+							<img src="images/hot%20ville.svg" alt="Hotel de ville" class="noselect">
+							<p>
+								Hotel de ville
+							</p>
+							<span class="coinSelector coin">300</span>
+							<p id="hiddenHistory2" class="p--history hidden">
+								L'hôtel de Ville de Namur se situe au no 42 de la rue de Fer. C'est un bâtiment de style fonctionnel, le précédent siège administratif de la ville ayant été bombardé pendant la Première Guerre mondiale. Avant 1976, la commune était divisée en 25 communes, chacun possédant son propre conseil communal et son propre bourgmestre.
+							</p>
+						</li>
+						<li id="cathedrale" class="bati__el">
+							<img src="images/cat%C3%87.svg" alt="Cathédrale saint-aubain" class="noselect">
+							<p>
+								Cathédrale Saint-Aubain
+							</p>
+							<span class="coinSelector coin">2000</span>
+							<p id="hiddenHistory3" class="p--history hidden">
+								La cathédrale Saint-Aubain de Namur est un édifice religieux catholique qui est l'église épiscopale et siège du diocèse de Namur. Commencée en 1751, son édification se termine en 1767. La consécration a eu lieu le 20 septembre 1772.
+							</p>
+						</li>
+						<li id="namurexpo" class="bati__el">
+							<img src="images/nam%20x.svg" alt="Namur expo - centre d'exposition" class="noselect">
+							<p>
+								Palais des expositions
+							</p>
+							<span class="coinSelector coin">10,000</span>
+							<p id="hiddenHistory4" class="p--history hidden">
+								Annuellement, Namur Expo accueille plus de 30 salons et événements ainsi que de nombreuses réunions. Plus de 250.000 personnes (entrepreneurs, décideurs ou simples visiteurs) s’y croisent chaque année lors des manifestations.
+							</p>
+						</li>
+						<li id="citadel" class="bati__el">
+							<img src="images/citad.svg" alt="Citadelle de Namur" class="noselect">
+							<p>
+								Citadelle
+							</p>
+							<span class="coinSelector coin">30,000</span>
+							<p id="hiddenHistory5" class="p--history hidden">
+								La citadelle de Namur, en Belgique est divisée en trois parties : Donjon, représentant la partie inférieure, Médiane pour la partie intermédiaire et Terra Nova pour la partie supérieure. Son sommet culmine à 190 m d'altitude.
+							</p>
+						</li>
+						<li id="prison" class="bati__el">
+							<img src="images/prison.svg" alt="Prison - maison de suretée de Namur" class="noselect">
+							<p>
+								Prison
+							</p>
+							<span class="coinSelector coin" id="coin">60,000</span>
+							<p id="hiddenHistory6" class="p--history hidden">
+								Depuis 1874, la prison de Namur sert de maison d’arrêt et de maison de peines. La prison est en forme d’étoile et comporte des sections ouvertes. On y trouve également une annexe psychiatrique.
+							</p>
+						</li>
+						<li id="hopital" class="bati__el">
+							<img src="images/chr.svg" alt="Centre hospitalier régional de namur" class="noselect">
+							<p>
+								Centre Hospitalier Régional
+							</p>
+							<span class="coinSelector coin">200,000</span>
+							<p id="hiddenHistory7" class="p--history hidden">
+								Le CHR de Namur est un hôpital général de 397 lits, à caractère pluraliste, sur site unique, qui propose une offre de soins complète et qui, par la qualité de l’accueil du patient, de sa prise en charge et des soins prodigués, remplit pleinement sa mission d’institution publique performante. Hôpital d'urgence, il est composé de l’ensemble des services médicaux.
+							</p>
+						</li>
+						<li id="gare" class="bati__el">
+							<img src="images/gare.svg" alt="Gare de Namur" class="noselect">
+							<p>
+								Gare de Namur
+							</p>
+							<span class="coinSelector coin">1,000,000</span>
+							<p id="hiddenHistory8" class="p--history hidden">
+								La gare de Namur est située au nord de la Corbeille, le centre historique de la ville. Le sillon ferroviaire est établi sur un ancien bras de Sambre qui ceinturait anciennement le rempart nord de la ville.
+							</p>
+						</li>
+					</ul>
+				</div>
+				<div id="zone__hidden" class="carte--zone">
+					<ul class="zone">
+						<li id="zoneHeaj" class="zone__el">
+							<img src="images/zone%20heaj@2x.png" alt="Region centrale-est - Haute école albert jacquard" class="noselect">
+							<p>
+								Zone centrale-est
+							</p>
+							<span class="coinSelector coin">15</span>
+						</li>
+						<li id="zoneHdv" class="zone__el">
+							<img src="images/zone%20hot%20vil@2x.png" alt="Région centrale - Hotel de ville" class="noselect">
+							<p>
+								Zone centrale
+							</p>
+							<span class="coinSelector coin">100</span>
+						</li>
+						<li id="zoneCathedrale" class="zone__el">
+							<img src="images/zone%20cat%C3%87@2x.png" alt="Région centrale-ouest - Cathédrale saint-aubain" class="noselect">
+							<p>
+								Zone centrale-ouest
+							</p>
+							<span class="coinSelector coin">500</span>
+						</li>
+						<li id="zoneNamurExpo" class="zone__el">
+							<img src="images/zone%20nam%20ex@2x.png" alt="Région ouest - Namur expo" class="noselect">
+							<p>
+								Zone ouest
+							</p>
+							<span class="coinSelector coin">2000</span>
+						</li>
+						<li id="zoneCitadel" class="zone__el">
+							<img src="images/zone%20citade@2x.png" alt="Région sud - Citadelle de Namur" class="noselect">
+							<p>
+								Zone sud
+							</p>
+							<span class="coinSelector coin">5000</span>
+						</li>
+						<li id="zonePrison" class="zone__el">
+							<img src="images/zone%20prison@2x.png" alt="Région nord - Prison de namur" class="noselect">
+							<p>
+								Zone nord
+							</p>
+							<span class="coinSelector coin">20,000</span>
+						</li>
+						<li id="zoneHopital" class="zone__el">
+							<img src="images/zone%20hopital@2x.png" alt="Région est - Centre hospitalier régional de namur" class="noselect">
+							<p>
+								Zone est
+							</p>
+							<span class="coinSelector coin">80,000</span>
+						</li>
+					</ul>
+				</div>
+				<div class="button--clicker noselect" id="click"></div>
+			</div>
+		</div>
+		<footer>
+			<ul class="kikliks container">
+				<li class="kikliks__el"><a href="http://adelinehercot.be" target="_blank">Adeline Hercot</a></li>
+				<li class="kikliks__el"><a href="http://antoinedispas.be/projets/Dataplay/" target="_blank">Antoine Dispas</a></li>
+				<li class="kikliks__el"><a href="http://christianyossatiani.be/projets/data-play" target="_blank">Christian Yossa Tiani</a></li>
+				<li class="kikliks__el"><a href="http://maxencecornet.be/projets/Dataplay/" target="_blank">Maxence Cornet</a></li>
+			</ul>
+			<ul class="footer container">
+				<li class="footer__el"> © Les kikliks</li>
+				<li class="footer__el"><a href="https://medium.com/@adelinehercot/d3a06a7fbfb4" target="_blank">Case study</a></li>
+				<li class="footer__el"><a href="http://dwm.re/" target="_blank">dwm</a></li>
+			</ul>
+		</footer>
+		<script src="js/svg.min.js">
+		</script>
+		<script src="js/utm-converter.js">
+		</script>
+		<script src="js/demo.js"></script>
+		<script src="js/hide.js"></script>
+		<script src="js/history.js"></script>
+		<script src="js/clicker.js"></script>
+		<script src="js/wow.min.js"></script>
+		<script>
+			new WOW().init();
+		</script>
+	</body>
+</html>
